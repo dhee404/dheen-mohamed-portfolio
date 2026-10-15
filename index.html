@@ -108,6 +108,36 @@ footer{padding:26px 0;border-top:1px solid var(--line)}.footer-row{display:flex;
  .hero-cinematic .signature-mark{font-size:36px;right:0;bottom:10%}
  .hero-cinematic .hero-side-note{font-size:8px;right:0}
 }
+
+/* Final spacing and placeholder cleanup while portrait asset is being wired in */
+.hero-cinematic{min-height:760px;padding:66px 0 78px}
+.hero-cinematic .hero-grid{grid-template-columns:minmax(330px,.9fr) minmax(400px,1.1fr);gap:12px}
+.hero-cinematic .hero-copy{max-width:500px}
+.hero-cinematic .hero-wordmark{right:0;top:26%;width:58%;font-size:clamp(120px,16vw,245px);opacity:.08;z-index:1}
+.hero-cinematic .hero-portrait-stage{min-height:560px}
+.hero-cinematic .portrait-frame{width:min(76%,420px);height:500px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
+.hero-cinematic .portrait-frame:before{content:none}
+.hero-cinematic .portrait-initials{font-size:clamp(100px,14vw,190px);color:#171615;opacity:.12;text-shadow:0 1px 0 rgba(255,255,255,.3)}
+.hero-cinematic .portrait-caption{left:50%;bottom:10%;transform:translateX(-50%);text-align:center;color:#8b5b0a;letter-spacing:.3em}
+.hero-cinematic .portrait-halo{width:83%;opacity:.56}
+.hero-cinematic .signature-mark{right:-1%;bottom:12%}
+@media(max-width:900px){
+ .hero-cinematic{min-height:auto;padding:44px 0 76px}
+ .hero-cinematic .hero-grid{grid-template-columns:1fr;gap:0}
+ .hero-cinematic .hero-copy{max-width:640px}
+ .hero-cinematic .hero-wordmark{top:54%;right:-4%;width:100%;font-size:clamp(130px,28vw,230px)}
+ .hero-cinematic .hero-portrait-stage{min-height:430px;margin-top:0}
+ .hero-cinematic .portrait-frame{height:390px;width:70%}
+}
+@media(max-width:560px){
+ .hero-cinematic{padding:34px 0 70px}
+ .hero-cinematic h1{font-size:clamp(40px,10.8vw,56px)}
+ .hero-cinematic .hero-wordmark{top:58%;right:-4%;width:108%;font-size:29vw}
+ .hero-cinematic .hero-portrait-stage{min-height:340px}
+ .hero-cinematic .portrait-frame{height:320px;width:68%}
+ .hero-cinematic .portrait-initials{font-size:90px}
+ .hero-cinematic .signature-mark{font-size:36px;right:0}
+}
 </style>
 </head>
 <body>
