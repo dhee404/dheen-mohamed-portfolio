@@ -159,6 +159,9 @@ footer{background:rgba(255,255,255,.28)}
 .hero-copy.visible .hero-foot{animation:heroIntroV1 .7s .92s both}
 @media(prefers-reduced-motion:reduce){.hero-copy.visible .eyebrow,.hero-copy.visible h1 .line,.hero-copy.visible .hero-description,.hero-copy.visible .actions,.hero-copy.visible .hero-foot{animation:none;opacity:1;transform:none;filter:none}}
 
+
+.owner-access{display:inline-grid;place-items:center;width:19px;height:19px;margin-left:8px;border:1px solid var(--line);border-radius:50%;color:var(--grey);font-size:10px;opacity:.48;transition:opacity .2s,border-color .2s}
+.owner-access:hover,.owner-access:focus-visible{opacity:1;border-color:var(--amber);color:var(--ash)}
 </style>
 </head>
 <body>
@@ -285,13 +288,43 @@ footer{background:rgba(255,255,255,.28)}
   </div></div></div>
 </section>
 </main>
-<footer><div class="container footer-row"><div class="footer-name">DHEEN MOHAMED · PERSONAL PORTFOLIO</div><div>Built around learning, analysis and practical work · 2026</div></div></footer>
+<footer><div class="container footer-row"><div class="footer-name">DHEEN MOHAMED · PERSONAL PORTFOLIO</div><div>Built around learning, analysis and practical work · 2026 <a class="owner-access" href="https://dheen-portfolio.hatchable.site/" aria-label="Owner access" title="Owner access">⌘</a></div></div></footer>
 <script>
 const menuButton=document.querySelector('.menu-btn');
 const navigation=document.querySelector('#navigation');
 menuButton.addEventListener('click',()=>{const isOpen=navigation.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');menuButton.textContent=isOpen?'×':'☰';});
 navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navigation.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰';}));
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+
+/* Optional portfolio content from the owner-managed backend */
+(async function loadOwnerManagedCards(){
+ const endpoint='https://dheen-portfolio.hatchable.site/api/items/list';
+ const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ try{
+  const response=await fetch(endpoint,{headers:{Accept:'application/json'}});
+  if(!response.ok)return;
+  const data=await response.json();
+  (data.items||[]).forEach(item=>{
+   const details=Array.isArray(item.details)?item.details:[];
+   if(item.item_type==='experience'){
+    const root=document.querySelector('.experience-list');if(!root)return;
+    const el=document.createElement('article');el.className='experience reveal visible';
+    el.innerHTML='<span class="timeline-dot"></span><div class="experience-card"><div class="experience-top"><div><div class="role-name">'+safe(item.title)+'</div><div class="role-meta">'+safe(item.organization)+'</div></div><span class="date">'+safe(item.date_label)+'</span></div><p style="margin-top:14px;color:var(--muted);font-size:13px">'+safe(item.description)+'</p>'+(details.length?'<ul>'+details.map(d=>'<li>'+safe(d)+'</li>').join('')+'</ul>':'')+'</div>';
+    root.appendChild(el);
+   }else if(item.item_type==='project'){
+    const root=document.querySelector('.projects-grid');if(!root)return;
+    const el=document.createElement('article');el.className='project reveal visible';
+    el.innerHTML='<div><div class="project-index">OWNER ADDED</div><h3>'+safe(item.title)+'</h3><p>'+safe(item.description)+'</p>'+(details.length?'<ul>'+details.map(d=>'<li>'+safe(d)+'</li>').join('')+'</ul>':'')+'</div><div class="project-type">'+safe(item.organization)+(item.date_label?' · '+safe(item.date_label):'')+'</div>';
+    root.appendChild(el);
+   }else if(item.item_type==='certification'){
+    const root=document.querySelector('.cert-grid');if(!root)return;
+    const el=document.createElement('article');el.className='cert reveal visible';
+    el.innerHTML='<div class="cert-icon">✓</div><div><h4>'+safe(item.title)+'</h4><p>'+safe(item.organization)+'</p><p class="cert-description">'+safe(item.description)+'</p><span class="year">'+safe(item.date_label)+'</span></div>';
+    root.appendChild(el);
+   }
+  });
+ }catch(e){console.info('Owner-managed cards are not available yet.');}
+})();
 </script>
 </body>
 </html>
