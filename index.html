@@ -70,6 +70,44 @@ footer{padding:26px 0;border-top:1px solid var(--line)}.footer-row{display:flex;
 @media(max-width:900px){.hero-cinematic{min-height:auto;padding:55px 0 75px}.hero-cinematic .hero-grid{grid-template-columns:1fr}.hero-cinematic .hero-copy{max-width:650px}.hero-wordmark{top:46%;right:-5%;font-size:clamp(150px,35vw,300px)}.hero-orb{width:80vw;right:-10%;top:43%}.hero-portrait-stage{min-height:450px;margin-top:20px}.portrait-frame{height:420px;width:min(70%,340px)}.hero-side-note{right:4%}.signature-mark{right:4%}.hero-scroll{left:24px}}
 @media(max-width:560px){.hero-cinematic{padding:38px 0 65px}.hero-cinematic .eyebrow{font-size:9px;letter-spacing:.14em;margin-bottom:22px}.hero-cinematic h1{font-size:clamp(43px,12vw,62px)}.hero-tagline{font-size:25px}.hero-description{font-size:14px}.hero-cinematic .actions{gap:9px}.hero-cinematic .btn{padding:13px 16px;font-size:13px}.hero-cinematic .hero-foot{gap:8px;font-size:8px}.hero-portrait-stage{min-height:360px}.portrait-frame{height:340px;width:70%}.hero-wordmark{font-size:38vw;top:54%}.hero-side-note{font-size:8px;right:0}.signature-mark{font-size:38px;right:0;bottom:12%}.hero-scroll{font-size:8px;bottom:18px}}
 @media(prefers-reduced-motion:reduce){.hero-cinematic *, .hero-cinematic *:before,.hero-cinematic *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Layout correction: keep the oversized wordmark in the portrait column, never under the copy */
+.hero-cinematic{min-height:720px;padding:76px 0 84px;overflow:hidden}
+.hero-cinematic .hero-grid{width:min(1200px,calc(100% - 64px));margin-inline:auto;grid-template-columns:minmax(330px,.88fr) minmax(400px,1.12fr);gap:24px;align-items:center}
+.hero-cinematic .hero-copy{max-width:510px;z-index:5}
+.hero-cinematic .hero-wordmark{left:auto;right:2%;top:24%;width:57%;text-align:center;font-size:clamp(120px,17vw,270px);letter-spacing:-.09em;line-height:.8;overflow:hidden;opacity:.10;color:#111;z-index:1}
+.hero-cinematic .hero-orb{right:7%;top:10%;width:min(52vw,650px);z-index:0}
+.hero-cinematic .hero-portrait-stage{min-width:0;min-height:590px;z-index:3}
+.hero-cinematic .portrait-frame{width:min(70%,390px);height:470px;border:0;border-radius:48% 48% 10px 10px;background:linear-gradient(150deg,#2b2418 0%,#111 64%,#5c421e 100%);box-shadow:0 25px 60px rgba(17,17,17,.18);overflow:hidden}
+.hero-cinematic .portrait-frame:before{inset:12px;border-color:rgba(242,172,60,.4)}
+.hero-cinematic .portrait-initials{font-size:clamp(70px,9vw,128px);opacity:.22;color:#f8f3e8}
+.hero-cinematic .portrait-caption{left:24px;bottom:25px}
+.hero-cinematic .signature-mark{right:0;bottom:12%;z-index:5}
+.hero-cinematic .hero-side-note{right:0;top:18%;z-index:4}
+.hero-cinematic .hero-tagline{position:relative;z-index:4;max-width:420px}
+.hero-cinematic .hero-description{position:relative;z-index:4;max-width:420px}
+@media(max-width:900px){
+ .hero-cinematic{min-height:auto;padding:48px 0 76px}
+ .hero-cinematic .hero-grid{width:calc(100% - 44px);grid-template-columns:1fr;gap:10px}
+ .hero-cinematic .hero-copy{max-width:650px}
+ .hero-cinematic .hero-wordmark{left:auto;right:-2%;top:52%;width:100%;font-size:clamp(110px,27vw,230px);text-align:center;opacity:.09}
+ .hero-cinematic .hero-orb{width:80vw;right:-8%;top:50%}
+ .hero-cinematic .hero-portrait-stage{min-height:430px;margin-top:0}
+ .hero-cinematic .portrait-frame{height:390px;width:min(65%,330px)}
+ .hero-cinematic .signature-mark{right:5%;bottom:10%}
+ .hero-cinematic .hero-side-note{right:3%;top:14%}
+}
+@media(max-width:560px){
+ .hero-cinematic{padding:36px 0 68px}
+ .hero-cinematic .hero-grid{width:calc(100% - 36px)}
+ .hero-cinematic .hero-wordmark{top:57%;right:-4%;width:108%;font-size:29vw;letter-spacing:-.1em}
+ .hero-cinematic .hero-cinematic h1,.hero-cinematic h1{font-size:clamp(39px,11vw,56px)}
+ .hero-cinematic .hero-portrait-stage{min-height:350px}
+ .hero-cinematic .portrait-frame{height:320px;width:68%}
+ .hero-cinematic .portrait-initials{font-size:88px}
+ .hero-cinematic .signature-mark{font-size:36px;right:0;bottom:10%}
+ .hero-cinematic .hero-side-note{font-size:8px;right:0}
+}
 </style>
 </head>
 <body>
