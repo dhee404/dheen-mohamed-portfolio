@@ -145,6 +145,20 @@ footer{background:rgba(255,255,255,.28)}
 @keyframes heroLineRevealV1{from{opacity:0;transform:translateY(115%);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
 @keyframes heroIntroV1{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
+
+/* Animation timing fix: start only when the hero reveal becomes visible */
+.hero-copy .eyebrow,.hero h1 .line,.hero-description,.hero-copy .actions,.hero-foot{animation:none}
+.hero-copy.visible .eyebrow{animation:heroIntroV1 .65s ease both}
+.hero-copy.visible h1 .line{animation:heroLineRevealV1 .8s cubic-bezier(.2,.75,.25,1) both}
+.hero-copy.visible h1 .line:nth-child(1){animation-delay:.08s}
+.hero-copy.visible h1 .line:nth-child(2){animation-delay:.22s}
+.hero-copy.visible h1 .line:nth-child(3){animation-delay:.36s}
+.hero-copy.visible h1 .line:nth-child(4){animation-delay:.5s}
+.hero-copy.visible .hero-description{animation:heroIntroV1 .7s .66s both}
+.hero-copy.visible .actions{animation:heroIntroV1 .7s .8s both}
+.hero-copy.visible .hero-foot{animation:heroIntroV1 .7s .92s both}
+@media(prefers-reduced-motion:reduce){.hero-copy.visible .eyebrow,.hero-copy.visible h1 .line,.hero-copy.visible .hero-description,.hero-copy.visible .actions,.hero-copy.visible .hero-foot{animation:none;opacity:1;transform:none;filter:none}}
+
 </style>
 </head>
 <body>
