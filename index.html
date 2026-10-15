@@ -129,22 +129,6 @@ footer{background:rgba(255,255,255,.28)}
 .project:hover:before,.project:focus-within:before{opacity:1}
 .profile-card{isolation:isolate}
 .profile-card>*:not(.globe-scene-v1){position:relative;z-index:2}
-.globe-scene-v1{position:absolute;z-index:1;right:-5px;top:20px;width:220px;height:220px;pointer-events:none;opacity:1;filter:drop-shadow(0 0 18px rgba(242,172,60,.12))}
-.globe-scene-v1:before{content:"";position:absolute;inset:8px;border:1px solid rgba(248,214,90,.28);border-radius:50%;transform:rotate(-24deg) scaleY(.32);animation:globeOrbitV1 8s linear infinite}
-.globe-scene-v1:after{content:"";position:absolute;inset:0;border:1px solid rgba(248,214,90,.22);border-radius:50%;transform:rotate(58deg) scaleY(.42);animation:globeOrbitV1 11s linear infinite reverse}
-.globe-sphere-v1{position:absolute;inset:22px;border-radius:50%;background:radial-gradient(circle at 31% 25%,rgba(248,214,90,.85),rgba(242,172,60,.3) 24%,rgba(17,17,17,.08) 62%);border:1px solid rgba(248,214,90,.9);box-shadow:inset -18px -10px 32px rgba(242,172,60,.22),0 0 42px rgba(242,172,60,.2);animation:globeTurnV1 12s linear infinite}
-.globe-sphere-v1:before,.globe-sphere-v1:after{content:"";position:absolute;inset:0;border:1px solid rgba(248,214,90,.5);border-radius:50%;transform:scaleX(.42)}
-.globe-sphere-v1:after{transform:rotate(60deg) scaleX(.55)}
-.globe-lat-v1{position:absolute;left:0;right:0;top:33%;height:32%;border:1px solid rgba(248,214,90,.45);border-left-color:transparent;border-right-color:transparent;border-radius:50%}
-.globe-lat-v1.second{top:43%;height:18%;transform:rotate(-20deg)}
-.globe-label-v1{position:absolute;font-size:9px;letter-spacing:1.2px;font-weight:800;color:#111;background:var(--gold);padding:6px 9px;border:1px solid rgba(248,214,90,.85);border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.28);animation:labelFloatV1 4s ease-in-out infinite}
-.globe-label-v1.data{top:5px;right:2px}
-.globe-label-v1.people{left:-7px;top:88px;animation-delay:-1.2s}
-.globe-label-v1.process{right:1px;bottom:3px;animation-delay:-2.1s}
-@keyframes globeTurnV1{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-@keyframes globeOrbitV1{from{rotate:0deg}to{rotate:360deg}}
-@keyframes labelFloatV1{0%,100%{translate:0 0}50%{translate:0 -5px}}
-@media(max-width:560px){.globe-scene-v1{right:-16px;top:8px;transform:scale(.78);transform-origin:top right;opacity:.8}}
 @media(prefers-reduced-motion:reduce){.hero-copy .eyebrow,.hero h1 .line,.hero-description,.hero-copy .actions,.hero-foot{animation:none;opacity:1;transform:none;filter:none}.globe-sphere-v1,.globe-label-v1{animation:none}.project,.project:before{transition:none}}
 
 </style>
@@ -170,7 +154,7 @@ footer{background:rgba(255,255,255,.28)}
       <div class="hero-foot">Structured thinking · Practical learning · Continuous improvement</div>
     </div>
     <aside class="profile-card reveal">
-      <div class="globe-scene-v1" aria-hidden="true"><div class="globe-sphere-v1"><span class="globe-lat-v1"></span><span class="globe-lat-v1 second"></span></div><span class="globe-label-v1 data">DATA</span><span class="globe-label-v1 people">PEOPLE</span><span class="globe-label-v1 process">PROCESS</span></div>
+      
       <div class="card-label">A little about how I work</div>
       <div><div class="card-symbol">01</div><h3>People. Process. Performance.</h3><p>I like making complex information easier to understand, spotting process gaps and turning analysis into clear next steps.</p></div>
       <div class="chips"><span class="chip">Business analysis</span><span class="chip">Reporting</span><span class="chip">HR operations</span><span class="chip">Process improvement</span></div>
