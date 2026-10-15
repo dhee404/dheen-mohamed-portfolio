@@ -27,158 +27,6 @@ footer{padding:26px 0;border-top:1px solid var(--line)}.footer-row{display:flex;
 @media(max-width:760px){.container{width:min(var(--max),calc(100% - 32px))}.section{padding:76px 0}.nav{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:76px;left:16px;right:16px;padding:15px;background:var(--paper);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);align-items:stretch;gap:2px}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:11px 9px;font-size:13px}.nav-cta{margin-top:5px}.hero{padding:122px 0 70px}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{gap:35px}.profile-card{min-height:290px}.section-head{display:block}.section-intro{margin-top:15px}.about-grid{gap:32px}.contact{padding:30px 24px}.contact-grid{gap:25px}.skills-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.container{width:calc(100% - 28px)}h1{font-size:clamp(55px,16vw,78px)}.hero h1 .highlight:after{height:8px;bottom:6px}.hero-description{font-size:16px}.profile-card{padding:25px}.focus-grid,.education-grid,.cert-grid,.projects-grid{grid-template-columns:1fr}.projects-grid .project:last-child{grid-column:auto}.project{min-height:270px}.experience{padding-left:34px}.experience-list:before{left:9px}.timeline-dot{left:1px}.experience-card{padding:22px 19px}.experience-top{display:block}.role-name{font-size:21px}.date{display:inline-flex;margin-top:12px}.footer-row{display:block}.footer-row div+div{margin-top:8px}.contact h2{font-size:40px}}
 
-/* Cinematic AD portfolio hero */
-.hero-cinematic{position:relative;isolation:isolate;overflow:hidden;min-height:min(790px,calc(100vh - 72px));display:flex;align-items:center;background:linear-gradient(110deg,#faf8f3 0%,#f7f0e2 57%,#f3dcae 100%);padding:70px 0 82px}
-.hero-cinematic .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(320px,.83fr) minmax(420px,1.17fr);align-items:center;gap:0}
-.hero-wordmark{position:absolute;z-index:0;right:1.5%;top:15%;font-size:clamp(180px,30vw,440px);font-weight:900;letter-spacing:-.095em;line-height:.8;color:#111;opacity:.95;white-space:nowrap;pointer-events:none;animation:wordmarkIn 1.2s cubic-bezier(.2,.7,.2,1) both}
-.hero-orb{position:absolute;width:min(58vw,700px);aspect-ratio:1;border-radius:50%;right:10%;top:9%;background:radial-gradient(circle at 40% 35%,#ffe28a 0%,#f2ac3c 38%,rgba(242,172,60,.05) 70%);opacity:.72;z-index:0;animation:orbIn 1.3s ease both}
-.hero-gridline{position:absolute;right:8%;top:8%;width:50%;height:80%;border:1px solid rgba(202,137,26,.35);border-radius:48% 48% 0 0;pointer-events:none}
-.hero-cinematic .hero-copy{position:relative;z-index:4;max-width:540px}
-.hero-cinematic .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#57534b;margin-bottom:30px}
-.hero-kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#7b6b50;margin:0 0 12px}
-.hero-kicker span{color:#d78e13;font-weight:800}
-.hero-cinematic h1{font-size:clamp(46px,5.3vw,78px);line-height:.98;letter-spacing:-.065em;font-weight:850;margin:0;color:#111}
-.hero-cinematic h1 .line{display:block;animation:heroLineIn .7s both;animation-delay:calc(var(--line-index,0)*.1s)}
-.hero-cinematic h1 .line:nth-child(2){--line-index:1}.hero-cinematic h1 .line:nth-child(3){--line-index:2}.hero-cinematic h1 .line:nth-child(4){--line-index:3}
-.hero-cinematic h1 em{font-style:normal;color:#d88f12}
-.hero-tagline{font-size:clamp(24px,2.5vw,35px);line-height:1.12;letter-spacing:-.035em;color:#4d4942;margin:22px 0 15px;padding-left:16px;border-left:2px solid #f2ac3c}
-.hero-description{max-width:390px;color:#68645e;font-size:16px;line-height:1.65}
-.hero-cinematic .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.hero-cinematic .btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
-.hero-cinematic .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(17,17,17,.13)}
-.hero-cinematic .hero-foot{display:flex;align-items:center;gap:12px;margin-top:35px;color:#726a5e;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
-.hero-cinematic .hero-foot i{display:block;width:4px;height:4px;border-radius:50%;background:#f2ac3c}
-.hero-portrait-stage{position:relative;z-index:3;min-height:550px;display:flex;align-items:center;justify-content:center}
-.portrait-halo{position:absolute;width:76%;aspect-ratio:1;border-radius:50%;background:linear-gradient(140deg,rgba(255,223,127,.7),rgba(242,172,60,.18));box-shadow:0 0 80px rgba(242,172,60,.25);animation:haloPulse 7s ease-in-out infinite}
-.portrait-frame{position:relative;width:min(76%,410px);height:510px;border:1px solid rgba(255,255,255,.75);border-radius:48% 48% 8px 8px;background:linear-gradient(145deg,rgba(17,17,17,.94),rgba(50,39,22,.86));box-shadow:0 32px 70px rgba(17,17,17,.22);display:flex;align-items:center;justify-content:center;overflow:hidden;transform:translateY(0);animation:portraitFloat 6s ease-in-out infinite}
-.portrait-frame:before{content:"";position:absolute;inset:12px;border:1px solid rgba(242,172,60,.45);border-radius:48% 48% 3px 3px}
-.portrait-initials{font-size:clamp(92px,12vw,170px);font-weight:900;letter-spacing:-.1em;color:#faf8f3;opacity:.94}
-.portrait-initials span{color:#f2ac3c}
-.portrait-caption{position:absolute;bottom:30px;left:28px;color:#f8d65a;font-size:10px;line-height:1.7;letter-spacing:.24em}
-.signature-mark{position:absolute;right:-2%;bottom:14%;font-family:cursive;font-style:italic;font-size:clamp(38px,5vw,68px);color:#d88f12;transform:rotate(-8deg);text-shadow:0 2px 0 rgba(255,255,255,.4)}
-.signature-mark small{display:block;text-align:right;font:700 12px sans-serif;letter-spacing:.35em;color:#111;margin-top:-5px}
-.hero-side-note{position:absolute;right:-2%;top:16%;font-size:10px;line-height:2.1;letter-spacing:.25em;color:#75674f}
-.hero-scroll{position:absolute;z-index:4;left:max(24px,calc((100% - 1200px)/2));bottom:22px;display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.2em;color:#25221d;text-decoration:none}
-.hero-scroll span{width:23px;height:36px;border:1px solid #25221d;border-radius:20px;position:relative}
-.hero-scroll span:after{content:"";position:absolute;width:3px;height:6px;background:#d88f12;left:9px;top:7px;border-radius:3px;animation:scrollDot 1.5s infinite}
-@keyframes heroLineIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes wordmarkIn{from{opacity:0;transform:translateX(35px)}to{opacity:.95;transform:translateX(0)}}
-@keyframes orbIn{from{opacity:0;transform:scale(.8)}to{opacity:.72;transform:scale(1)}}
-@keyframes portraitFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes haloPulse{0%,100%{transform:scale(1);opacity:.72}50%{transform:scale(1.035);opacity:.95}}
-@keyframes scrollDot{0%{transform:translateY(0);opacity:1}100%{transform:translateY(12px);opacity:0}}
-@media(max-width:900px){.hero-cinematic{min-height:auto;padding:55px 0 75px}.hero-cinematic .hero-grid{grid-template-columns:1fr}.hero-cinematic .hero-copy{max-width:650px}.hero-wordmark{top:46%;right:-5%;font-size:clamp(150px,35vw,300px)}.hero-orb{width:80vw;right:-10%;top:43%}.hero-portrait-stage{min-height:450px;margin-top:20px}.portrait-frame{height:420px;width:min(70%,340px)}.hero-side-note{right:4%}.signature-mark{right:4%}.hero-scroll{left:24px}}
-@media(max-width:560px){.hero-cinematic{padding:38px 0 65px}.hero-cinematic .eyebrow{font-size:9px;letter-spacing:.14em;margin-bottom:22px}.hero-cinematic h1{font-size:clamp(43px,12vw,62px)}.hero-tagline{font-size:25px}.hero-description{font-size:14px}.hero-cinematic .actions{gap:9px}.hero-cinematic .btn{padding:13px 16px;font-size:13px}.hero-cinematic .hero-foot{gap:8px;font-size:8px}.hero-portrait-stage{min-height:360px}.portrait-frame{height:340px;width:70%}.hero-wordmark{font-size:38vw;top:54%}.hero-side-note{font-size:8px;right:0}.signature-mark{font-size:38px;right:0;bottom:12%}.hero-scroll{font-size:8px;bottom:18px}}
-@media(prefers-reduced-motion:reduce){.hero-cinematic *, .hero-cinematic *:before,.hero-cinematic *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-
-/* Layout correction: keep the oversized wordmark in the portrait column, never under the copy */
-.hero-cinematic{min-height:720px;padding:76px 0 84px;overflow:hidden}
-.hero-cinematic .hero-grid{width:min(1200px,calc(100% - 64px));margin-inline:auto;grid-template-columns:minmax(330px,.88fr) minmax(400px,1.12fr);gap:24px;align-items:center}
-.hero-cinematic .hero-copy{max-width:510px;z-index:5}
-.hero-cinematic .hero-wordmark{left:auto;right:2%;top:24%;width:57%;text-align:center;font-size:clamp(120px,17vw,270px);letter-spacing:-.09em;line-height:.8;overflow:hidden;opacity:.10;color:#111;z-index:1}
-.hero-cinematic .hero-orb{right:7%;top:10%;width:min(52vw,650px);z-index:0}
-.hero-cinematic .hero-portrait-stage{min-width:0;min-height:590px;z-index:3}
-.hero-cinematic .portrait-frame{width:min(70%,390px);height:470px;border:0;border-radius:48% 48% 10px 10px;background:linear-gradient(150deg,#2b2418 0%,#111 64%,#5c421e 100%);box-shadow:0 25px 60px rgba(17,17,17,.18);overflow:hidden}
-.hero-cinematic .portrait-frame:before{inset:12px;border-color:rgba(242,172,60,.4)}
-.hero-cinematic .portrait-initials{font-size:clamp(70px,9vw,128px);opacity:.22;color:#f8f3e8}
-.hero-cinematic .portrait-caption{left:24px;bottom:25px}
-.hero-cinematic .signature-mark{right:0;bottom:12%;z-index:5}
-.hero-cinematic .hero-side-note{right:0;top:18%;z-index:4}
-.hero-cinematic .hero-tagline{position:relative;z-index:4;max-width:420px}
-.hero-cinematic .hero-description{position:relative;z-index:4;max-width:420px}
-@media(max-width:900px){
- .hero-cinematic{min-height:auto;padding:48px 0 76px}
- .hero-cinematic .hero-grid{width:calc(100% - 44px);grid-template-columns:1fr;gap:10px}
- .hero-cinematic .hero-copy{max-width:650px}
- .hero-cinematic .hero-wordmark{left:auto;right:-2%;top:52%;width:100%;font-size:clamp(110px,27vw,230px);text-align:center;opacity:.09}
- .hero-cinematic .hero-orb{width:80vw;right:-8%;top:50%}
- .hero-cinematic .hero-portrait-stage{min-height:430px;margin-top:0}
- .hero-cinematic .portrait-frame{height:390px;width:min(65%,330px)}
- .hero-cinematic .signature-mark{right:5%;bottom:10%}
- .hero-cinematic .hero-side-note{right:3%;top:14%}
-}
-@media(max-width:560px){
- .hero-cinematic{padding:36px 0 68px}
- .hero-cinematic .hero-grid{width:calc(100% - 36px)}
- .hero-cinematic .hero-wordmark{top:57%;right:-4%;width:108%;font-size:29vw;letter-spacing:-.1em}
- .hero-cinematic .hero-cinematic h1,.hero-cinematic h1{font-size:clamp(39px,11vw,56px)}
- .hero-cinematic .hero-portrait-stage{min-height:350px}
- .hero-cinematic .portrait-frame{height:320px;width:68%}
- .hero-cinematic .portrait-initials{font-size:88px}
- .hero-cinematic .signature-mark{font-size:36px;right:0;bottom:10%}
- .hero-cinematic .hero-side-note{font-size:8px;right:0}
-}
-
-/* Final spacing and placeholder cleanup while portrait asset is being wired in */
-.hero-cinematic{min-height:760px;padding:66px 0 78px}
-.hero-cinematic .hero-grid{grid-template-columns:minmax(330px,.9fr) minmax(400px,1.1fr);gap:12px}
-.hero-cinematic .hero-copy{max-width:500px}
-.hero-cinematic .hero-wordmark{right:0;top:26%;width:58%;font-size:clamp(120px,16vw,245px);opacity:.08;z-index:1}
-.hero-cinematic .hero-portrait-stage{min-height:560px}
-.hero-cinematic .portrait-frame{width:min(76%,420px);height:500px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
-.hero-cinematic .portrait-frame:before{content:none}
-.hero-cinematic .portrait-initials{font-size:clamp(100px,14vw,190px);color:#171615;opacity:.12;text-shadow:0 1px 0 rgba(255,255,255,.3)}
-.hero-cinematic .portrait-caption{left:50%;bottom:10%;transform:translateX(-50%);text-align:center;color:#8b5b0a;letter-spacing:.3em}
-.hero-cinematic .portrait-halo{width:83%;opacity:.56}
-.hero-cinematic .signature-mark{right:-1%;bottom:12%}
-@media(max-width:900px){
- .hero-cinematic{min-height:auto;padding:44px 0 76px}
- .hero-cinematic .hero-grid{grid-template-columns:1fr;gap:0}
- .hero-cinematic .hero-copy{max-width:640px}
- .hero-cinematic .hero-wordmark{top:54%;right:-4%;width:100%;font-size:clamp(130px,28vw,230px)}
- .hero-cinematic .hero-portrait-stage{min-height:430px;margin-top:0}
- .hero-cinematic .portrait-frame{height:390px;width:70%}
-}
-@media(max-width:560px){
- .hero-cinematic{padding:34px 0 70px}
- .hero-cinematic h1{font-size:clamp(40px,10.8vw,56px)}
- .hero-cinematic .hero-wordmark{top:58%;right:-4%;width:108%;font-size:29vw}
- .hero-cinematic .hero-portrait-stage{min-height:340px}
- .hero-cinematic .portrait-frame{height:320px;width:68%}
- .hero-cinematic .portrait-initials{font-size:90px}
- .hero-cinematic .signature-mark{font-size:36px;right:0}
-}
-
-/* Definitive hero repair: clean left copy, restrained wordmark, no fake profile card */
-.hero-cinematic{min-height:760px;padding:64px 0 80px;overflow:hidden}
-.hero-cinematic .hero-grid{width:min(1200px,calc(100% - 64px));margin-inline:auto;display:grid;grid-template-columns:minmax(340px,.9fr) minmax(390px,1.1fr);gap:28px;align-items:center}
-.hero-cinematic .hero-copy{position:relative;z-index:6;max-width:520px;background:linear-gradient(90deg,rgba(250,248,243,.97),rgba(250,248,243,.88) 78%,rgba(250,248,243,0));padding:20px 18px 24px 0}
-.hero-cinematic .hero-wordmark{top:31%;right:1%;left:auto;width:55%;text-align:center;font-size:clamp(100px,14vw,220px);line-height:.8;letter-spacing:-.09em;opacity:.045;color:#111;z-index:1;white-space:nowrap}
-.hero-cinematic .hero-orb{right:5%;top:12%;width:min(48vw,600px);opacity:.42;z-index:0}
-.hero-cinematic .hero-gridline{right:5%;width:50%;opacity:.55}
-.hero-cinematic .hero-portrait-stage{position:relative;z-index:3;min-height:560px;overflow:hidden}
-.hero-cinematic .portrait-frame{position:relative;width:78%;height:490px;margin:auto;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible;display:flex;align-items:center;justify-content:center}
-.hero-cinematic .portrait-frame:before{content:none}
-.hero-cinematic .portrait-initials{font-size:clamp(90px,10vw,150px);color:#171615;opacity:.1;text-shadow:none}
-.hero-cinematic .portrait-caption{left:50%;bottom:9%;transform:translateX(-50%);text-align:center;color:#79520e;white-space:nowrap}
-.hero-cinematic .portrait-halo{width:76%;opacity:.4}
-.hero-cinematic .signature-mark{right:0;bottom:10%;font-size:clamp(34px,4vw,54px)}
-.hero-cinematic .hero-side-note{right:1%;top:12%;font-size:9px}
-.hero-cinematic .hero-kicker{margin-top:0}
-.hero-cinematic .hero-tagline,.hero-cinematic .hero-description,.hero-cinematic .actions{position:relative;z-index:7}
-@media(max-width:900px){
- .hero-cinematic{min-height:auto;padding:44px 0 70px}
- .hero-cinematic .hero-grid{width:calc(100% - 44px);grid-template-columns:1fr;gap:0}
- .hero-cinematic .hero-copy{max-width:650px;background:linear-gradient(90deg,rgba(250,248,243,.98),rgba(250,248,243,.85));padding:10px 0 18px}
- .hero-cinematic .hero-wordmark{top:56%;right:-4%;width:100%;font-size:clamp(120px,27vw,220px);opacity:.055}
- .hero-cinematic .hero-orb{width:80vw;right:-10%;top:52%}
- .hero-cinematic .hero-portrait-stage{min-height:400px;margin-top:0}
- .hero-cinematic .portrait-frame{height:360px;width:70%}
- .hero-cinematic .signature-mark{right:4%;bottom:10%}
-}
-@media(max-width:560px){
- .hero-cinematic{padding:32px 0 64px}
- .hero-cinematic .hero-grid{width:calc(100% - 36px)}
- .hero-cinematic .eyebrow{font-size:9px;letter-spacing:.12em}
- .hero-cinematic h1{font-size:clamp(39px,10.8vw,55px);line-height:1}
- .hero-cinematic .hero-tagline{font-size:24px}
- .hero-cinematic .hero-wordmark{top:62%;right:-5%;width:110%;font-size:29vw;opacity:.045}
- .hero-cinematic .hero-portrait-stage{min-height:330px}
- .hero-cinematic .portrait-frame{height:300px;width:70%}
- .hero-cinematic .portrait-initials{font-size:88px}
- .hero-cinematic .signature-mark{font-size:34px;right:0}
- .hero-cinematic .hero-side-note{font-size:8px}
-}
 </style>
 </head>
 <body>
@@ -192,31 +40,21 @@ footer{padding:26px 0;border-top:1px solid var(--line)}.footer-row{display:flex;
   </div>
 </header>
 <main id="home">
-<section class="hero hero-cinematic" id="home">
-  <div class="hero-orb" aria-hidden="true"></div>
-  <div class="hero-gridline" aria-hidden="true"></div>
-  <div class="hero-wordmark" aria-hidden="true">DHEEN</div>
+<section class="hero">
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <div class="eyebrow">MBA · HR · ANALYTICS · OPERATIONS</div>
-      <p class="hero-kicker">HELLO, I'M DHEEN <span>AD.</span></p>
-      <h1><span class="line">Good work</span><span class="line">starts with</span><span class="line">asking <em>better</em></span><span class="line">questions.</span></h1>
-      <p class="hero-tagline">Experience that<br> connects the dots.</p>
-      <p class="hero-description">I'm Dheen, an MBA graduate with experience in HR operations, analytics and cross-functional support.</p>
-      <div class="actions"><a class="btn btn-primary" href="#projects">View My Work <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#contact">Let's Connect <span aria-hidden="true">↗</span></a></div>
-      <div class="hero-foot"><span>People</span><i></i><span>Process</span><i></i><span>Insight</span></div>
+      <div class="eyebrow">Analyst · Business · Operations</div>
+      <h1><span class="line">Curious by</span><span class="line">nature.</span><span class="line highlight">Analytical by</span><span class="line">approach.</span></h1>
+      <p class="hero-description">I'm Dheen Mohamed, an MBA graduate and analyst interested in how people, data and processes come together to solve practical business problems. My experience spans operations, reporting, finance processes and HR support.</p>
+      <div class="actions"><a class="btn btn-primary" href="#experience">Explore my experience <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="#projects">View selected work</a></div>
+      <div class="hero-foot">Structured thinking · Practical learning · Continuous improvement</div>
     </div>
-    <div class="hero-portrait-stage" aria-label="Portrait area reserved for Dheen's approved photo">
-      <div class="portrait-halo" aria-hidden="true"></div>
-      <div class="portrait-frame">
-        <div class="portrait-initials">AD<span>.</span></div>
-        <div class="portrait-caption">PERSONAL<br>PORTFOLIO</div>
-      </div>
-      <div class="signature-mark" aria-hidden="true">Dheen <small>AD</small></div>
-      <div class="hero-side-note">LEARN<br>EXPLORE<br>GROW</div>
-    </div>
+    <aside class="profile-card reveal">
+      <div class="card-label">A little about how I work</div>
+      <div><div class="card-symbol">01</div><h3>People. Process. Performance.</h3><p>I like making complex information easier to understand, spotting process gaps and turning analysis into clear next steps.</p></div>
+      <div class="chips"><span class="chip">Business analysis</span><span class="chip">Reporting</span><span class="chip">HR operations</span><span class="chip">Process improvement</span></div>
+    </aside>
   </div>
-  <a class="hero-scroll" href="#about" aria-label="Scroll to explore"><span></span> SCROLL TO EXPLORE</a>
 </section>
 
 <section id="about" class="section dark">
