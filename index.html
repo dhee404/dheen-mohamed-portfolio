@@ -1,657 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dheen Mohamed | MBA HR | HR Operations, People & Business Analysis Portfolio">
-<title>Dheen Mohamed | Personal Portfolio</title>
-
-<!-- Brand-inspired typography -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf8f3">
+<meta name="description" content="Dheen Mohamed's professional portfolio across business analysis, operations, reporting, HR and process improvement.">
+<title>Dheen Mohamed | Analyst &amp; Professional Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=General+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --amber:#f2ac3c;
-  --gold:#f8d65a;
-  --paper:#faf8f3;
-  --grey:#646767;
-  --ash:#111111;
-  --ink:#191a1a;
-  --muted:#777b7b;
-  --line:#dedbd3;
-  --soft:#f3f0e9;
-  --white:#fff;
-  --heading:"Urbanist",Arial,sans-serif;
-  --body:"Manrope",Arial,sans-serif;
-  --shadow:0 18px 50px rgba(17,17,17,.08);
-  --radius:22px;
-  --max:1180px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--body);line-height:1.65;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(var(--max),calc(100% - 44px));margin:auto}
-.section{padding:105px 0}
-.kicker{
-  display:flex;align-items:center;gap:12px;
-  font-size:11px;font-weight:800;letter-spacing:2px;
-  text-transform:uppercase;color:var(--grey);margin-bottom:18px
-}
-.kicker:before{content:"";width:28px;height:3px;background:var(--amber)}
-h1,h2,h3,h4{font-family:var(--heading);line-height:1.05;margin:0}
-h2{font-size:clamp(38px,5vw,64px);letter-spacing:-2px}
-h3{font-size:25px;letter-spacing:-.5px}
-p{margin:0}
-.muted{color:#5f6363}
-.highlight{color:var(--amber)}
-::selection{background:var(--gold);color:var(--ash)}
-
-header{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:rgba(250,248,243,.88);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(17,17,17,.06)
-}
-.navbar{
-  height:76px;display:flex;align-items:center;justify-content:space-between
-}
-.logo{
-  display:flex;align-items:center;gap:12px;font-family:var(--heading);
-  font-weight:800;font-size:19px;letter-spacing:-.5px
-}
-.logo-mark{width:5px;height:38px;background:var(--amber);display:block}
-.logo small{
-  display:block;font-family:var(--body);font-size:8px;letter-spacing:2px;
-  color:var(--grey);font-weight:700;margin-top:2px
-}
-.navlinks{display:flex;gap:26px;align-items:center}
-.navlinks a{
-  font-size:12px;font-weight:700;color:var(--grey);
-  position:relative;padding:8px 0
-}
-.navlinks a:after{
-  content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;
-  background:var(--amber);transition:.25s
-}
-.navlinks a:hover:after{right:0}
-.menu{display:none;border:0;background:none;font-size:25px}
-
-.hero{padding:155px 0 95px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
-.hero h1{font-size:clamp(58px,8vw,106px);letter-spacing:-6px;max-width:820px}
-.hero h1 .line{display:block}
-.hero h1 .accent{position:relative;display:inline-block}
-.hero h1 .accent:after{
-  content:"";position:absolute;left:3px;right:-8px;bottom:5px;height:10px;
-  background:var(--gold);z-index:-1
-}
-.hero-intro{font-size:18px;color:var(--grey);max-width:650px;margin-top:28px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  padding:13px 19px;border-radius:999px;border:1px solid var(--ash);
-  font-size:12px;font-weight:800;transition:.2s
-}
-.btn.primary{background:var(--ash);color:var(--paper)}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(17,17,17,.15)}
-.btn.secondary{border-color:var(--line)}
-.btn.secondary:hover{border-color:var(--ash)}
-.hero-note{
-  background:var(--ash);color:var(--paper);padding:32px;border-radius:28px;
-  box-shadow:var(--shadow);position:relative;overflow:hidden
-}
-.hero-note:after{
-  content:"&";position:absolute;right:-15px;bottom:-48px;
-  font-family:var(--heading);font-size:190px;font-weight:800;color:var(--amber);
-  opacity:.13;line-height:1
-}
-.hero-note .big{font-family:var(--heading);font-size:54px;font-weight:700;color:var(--amber)}
-.hero-note h3{font-size:22px;margin:12px 0 9px}
-.hero-note p{color:#c7c9c8;font-size:13px;max-width:280px}
-.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
-.pill{
-  padding:7px 11px;border:1px solid rgba(255,255,255,.18);
-  border-radius:999px;color:#d7d8d7;font-size:10px;font-weight:700
-}
-.scrollcue{margin-top:55px;font-size:10px;letter-spacing:2px;color:var(--grey);text-transform:uppercase}
-
-.dark-section{background:var(--ash);color:var(--paper)}
-.dark-section .kicker{color:#aaa}
-.dark-section .muted{color:#aaa}
-.dark-section .kicker:before{background:var(--amber)}
-
-.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
-.about-copy{font-size:16px;color:#4f5353}
-.about-copy p+p{margin-top:20px}
-.quote{
-  margin-top:32px;padding:23px 25px;border-left:4px solid var(--amber);
-  background:var(--soft);font-family:var(--heading);font-size:21px;
-  font-weight:600;letter-spacing:-.4px
-}
-.dark-section .quote{background:#191a1a;color:var(--paper)}
-.dark-section .stat,
-.dark-section .skill-panel{color:var(--ink)}
-.dark-section .stat strong,
-.dark-section .skill-panel h3{color:var(--ink)}
-.dark-section .stat span{color:var(--grey)}
-.dark-section .skill{color:var(--ink)}
-.dark-section .skill-panel{background:var(--white)}
-.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-.stat{
-  padding:22px;background:var(--soft);border-radius:18px
-}
-.stat strong{font-family:var(--heading);font-size:33px;display:block}
-.stat span{font-size:11px;color:var(--grey);font-weight:700}
-
-.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}
-.section-head p{max-width:420px;color:var(--grey);font-size:13px}
-
-.timeline{position:relative;margin-top:20px}
-.timeline:before{
-  content:"";position:absolute;left:13px;top:4px;bottom:4px;width:2px;background:var(--line)
-}
-.role{position:relative;padding-left:54px;margin-bottom:22px}
-.role:last-child{margin-bottom:0}
-.dot{
-  position:absolute;left:5px;top:7px;width:18px;height:18px;border-radius:50%;
-  background:var(--paper);border:4px solid var(--amber);z-index:2
-}
-.role-card{
-  background:var(--white);border:1px solid var(--line);border-radius:22px;
-  padding:28px;transition:.25s
-}
-.role-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.role-top{display:flex;justify-content:space-between;gap:20px}
-.role-title{font-size:23px;font-weight:700}
-.role-company{color:var(--grey);font-size:13px;margin-top:4px}
-.role-date{
-  white-space:nowrap;padding:7px 11px;height:max-content;border-radius:999px;
-  background:var(--soft);font-size:10px;font-weight:800;color:var(--grey)
-}
-.role-card ul{margin:20px 0 0;padding-left:19px;color:#4f5353;font-size:13px}
-.role-card li+li{margin-top:8px}
-.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
-.tag{
-  background:var(--paper);border:1px solid var(--line);padding:6px 9px;
-  border-radius:999px;font-size:9px;font-weight:800;color:var(--grey)
-}
-
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.project{
-  min-height:285px;background:var(--white);border:1px solid var(--line);
-  border-radius:24px;padding:27px;display:flex;flex-direction:column;
-  justify-content:space-between;transition:.25s;overflow:hidden;position:relative
-}
-.project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.project:nth-child(2){background:var(--ash);color:var(--paper)}
-.project:nth-child(2) .muted{color:#aeb1b0}
-.project-num{font-family:var(--heading);font-size:13px;font-weight:800;color:var(--amber)}
-.project h3{margin-top:18px;font-size:23px}
-.project p{font-size:12px;color:var(--grey);margin-top:14px}
-.project:nth-child(2) p{color:#aeb1b0}
-.project-bottom{font-size:10px;font-weight:800;color:var(--grey);margin-top:25px}
-.project:nth-child(2) .project-bottom{color:#bfc1c0}
-
-.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.edu{
-  border:1px solid var(--line);background:var(--white);border-radius:22px;padding:27px
-}
-.edu-year{color:var(--amber);font-size:11px;font-weight:900;letter-spacing:1px}
-.edu h3{margin:12px 0 8px;font-size:22px}
-.edu p{font-size:12px;color:var(--grey)}
-
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.skill-panel{
-  background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px
-}
-.skill-panel h3{margin-bottom:20px}
-.skill-list{display:flex;flex-wrap:wrap;gap:9px}
-.skill{
-  padding:10px 12px;border-radius:12px;background:var(--soft);
-  font-size:11px;font-weight:800
-}
-
-.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.cert{
-  background:var(--white);border:1px solid var(--line);border-radius:18px;
-  padding:18px 20px;display:grid;grid-template-columns:34px 1fr;gap:13px;
-  align-items:start
-}
-.cert-icon{
-  width:34px;height:34px;border-radius:10px;background:var(--ash);color:var(--amber);
-  display:grid;place-items:center;font-family:var(--heading);font-weight:800
-}
-.cert h4{font-size:14px;letter-spacing:-.2px}
-.cert p{font-size:10px;color:var(--grey);margin-top:5px}
-
-.cert .year{font-size:9px;font-weight:800;color:var(--amber);margin-top:7px}
-.credential-btn{
-  display:inline-flex;align-items:center;gap:7px;margin-top:10px;padding:7px 10px;
-  border-radius:999px;background:var(--ash);color:var(--paper);font-size:9px;font-weight:800;
-  transition:.2s
-}
-.credential-btn:hover{transform:translateY(-1px);background:#292a2a}
-@media(max-width:650px){
-  }
-
-
-.contact{
-  background:var(--amber);color:var(--ash);border-radius:30px;padding:52px;
-  position:relative;overflow:hidden
-}
-.contact:after{
-  content:"&";position:absolute;right:25px;bottom:-90px;font-family:var(--heading);
-  font-size:260px;line-height:1;font-weight:800;opacity:.12
-}
-.contact-grid{display:grid;grid-template-columns:1fr .75fr;gap:50px;position:relative;z-index:1}
-.contact h2{font-size:clamp(42px,5vw,67px)}
-.contact p{max-width:560px;margin-top:18px;font-size:14px}
-.contact-links{display:grid;gap:11px;align-content:center}
-.contact-link{
-  background:rgba(17,17,17,.92);color:var(--paper);padding:15px 17px;
-  border-radius:14px;font-size:12px;font-weight:800
-}
-.contact-link span{color:#aeb1b0;font-weight:500;margin-left:7px}
-
-footer{padding:28px 0;border-top:1px solid var(--line)}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--grey)}
-.footer-mark{font-family:var(--heading);font-weight:800;color:var(--ash)}
-
-.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
-.reveal.show{opacity:1;transform:none}
-
-@media(max-width:900px){
-  .navlinks{display:none}
-  .menu{display:block}
-  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .hero{padding-top:125px}
-  .hero-note{max-width:560px}
-  .projects{grid-template-columns:1fr 1fr}
-}
-@media(max-width:650px){
-  .container{width:min(var(--max),calc(100% - 28px))}
-  .section{padding:78px 0}
-  .hero h1{font-size:clamp(52px,15vw,78px);letter-spacing:-4px}
-  .projects,.education-grid,.skills-grid,.cert-grid{grid-template-columns:1fr}
-  .section-head{display:block}
-  .section-head p{margin-top:15px}
-  .role-top{display:block}
-  .role-date{display:inline-block;margin-top:10px}
-  .contact{padding:30px 24px}
-  .footer-inner{display:block}
-  .footer-inner div+div{margin-top:8px}
-}
+:root{--amber:#f2ac3c;--gold:#f8d65a;--paper:#faf8f3;--grey:#646767;--ash:#111;--ink:#202121;--muted:#686d6c;--line:#e4e0d7;--soft:#f1eee7;--white:#fff;--head:"Urbanist",Arial,sans-serif;--body:"General Sans",Arial,sans-serif;--max:1160px;--radius:24px;--shadow:0 20px 55px rgba(17,17,17,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65}body,button,a{font-family:var(--body)}a{color:inherit;text-decoration:none}button{color:inherit}::selection{background:var(--gold);color:var(--ash)}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.section{padding:100px 0}.eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:var(--grey);margin-bottom:18px}.eyebrow:before{content:"";width:26px;height:3px;background:var(--amber)}h1,h2,h3,h4{font-family:var(--head);line-height:1.06;margin:0;letter-spacing:-.035em}h1{font-size:clamp(58px,8.6vw,108px);font-weight:800;letter-spacing:-.075em}h2{font-size:clamp(38px,5.2vw,66px);font-weight:800}h3{font-size:25px}p{margin:0}.muted{color:var(--muted)}.accent{color:var(--amber)}.section-intro{max-width:430px;color:var(--muted);font-size:14px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:42px}.section-head>div:first-child{max-width:670px}
+header{position:fixed;z-index:20;inset:0 0 auto;background:rgba(250,248,243,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(17,17,17,.07)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-family:var(--head);font-size:18px;font-weight:800;line-height:1.05}.brand-mark{width:5px;height:36px;background:var(--amber)}.brand small{display:block;font-family:var(--body);font-size:9px;letter-spacing:1.8px;color:var(--grey);margin-top:5px}.nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:12px;font-weight:700;color:var(--grey);transition:color .2s}.nav-links a:hover{color:var(--ash)}.nav-cta{padding:10px 15px;border-radius:999px;background:var(--ash);color:var(--paper)!important}.menu-btn{display:none;border:1px solid var(--line);border-radius:12px;background:transparent;width:42px;height:42px;font-size:22px;cursor:pointer}
+.hero{padding:155px 0 90px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:64px;align-items:center}.hero-copy .eyebrow{margin-bottom:24px}.hero h1 .line{display:block}.hero h1 .highlight{position:relative;display:inline-block;z-index:0}.hero h1 .highlight:after{content:"";position:absolute;left:3px;right:-8px;bottom:8px;height:12px;background:var(--gold);z-index:-1}.hero-description{max-width:660px;margin-top:27px;color:var(--muted);font-size:clamp(16px,1.7vw,19px)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border:1px solid var(--ash);border-radius:999px;font-size:12px;font-weight:800;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--ash);color:var(--paper)}.btn-ghost{border-color:var(--line)}.hero-foot{margin-top:43px;color:var(--grey);font-size:10px;letter-spacing:1.8px;text-transform:uppercase}.profile-card{position:relative;overflow:hidden;padding:32px;border-radius:30px;background:var(--ash);color:var(--paper);min-height:340px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}.profile-card:after{content:"+";position:absolute;right:-15px;bottom:-95px;color:var(--amber);opacity:.13;font-family:var(--head);font-size:270px;font-weight:800;line-height:1}.card-label{font-size:10px;letter-spacing:2px;color:#b5b7b6;text-transform:uppercase;font-weight:800}.card-symbol{font-family:var(--head);font-size:64px;font-weight:800;color:var(--amber);line-height:1}.profile-card h3{max-width:290px;font-size:28px;margin-top:15px}.profile-card p{max-width:300px;font-size:13px;color:#c4c6c5;margin-top:12px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;position:relative;z-index:1}.chip{font-size:10px;font-weight:700;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#e2e3e2}
+.dark{background:var(--ash);color:var(--paper)}.dark .eyebrow{color:#b6b8b7}.dark .section-intro{color:#b6b8b7}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}.about-text{font-size:15px;color:#c5c7c6}.about-text p+p{margin-top:18px}.quote{margin-top:27px;padding:20px 22px;border-left:3px solid var(--amber);background:#1c1d1d;font-family:var(--head);font-weight:600;font-size:20px;line-height:1.4}.focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}.focus{padding:17px 18px;background:#1c1d1d;border:1px solid #303232;border-radius:16px}.focus strong{display:block;font-family:var(--head);font-size:17px}.focus span{display:block;color:#b6b8b7;font-size:11px;margin-top:4px}
+.experience-list{position:relative;display:grid;gap:17px}.experience-list:before{content:"";position:absolute;left:13px;top:12px;bottom:20px;width:2px;background:var(--line)}.experience{position:relative;padding-left:48px}.timeline-dot{position:absolute;left:5px;top:26px;width:18px;height:18px;border:4px solid var(--amber);border-radius:50%;background:var(--paper);z-index:1}.experience-card{padding:27px 29px;background:var(--white);border:1px solid var(--line);border-radius:22px;transition:transform .2s,box-shadow .2s}.experience-card:hover,.project:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.experience-top{display:flex;justify-content:space-between;gap:18px}.role-name{font-family:var(--head);font-weight:800;font-size:23px;line-height:1.15;letter-spacing:-.03em}.role-meta{font-size:12px;color:var(--muted);margin-top:7px}.date{align-self:start;white-space:nowrap;background:var(--soft);padding:7px 10px;border-radius:999px;color:var(--grey);font-size:10px;font-weight:800}.experience-card ul{margin:18px 0 0;padding-left:18px;color:#525756;font-size:13px}.experience-card li+li{margin-top:7px}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:10px;font-weight:700;color:var(--grey);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 9px}
+.projects-section{background:var(--soft)}.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.project{min-height:310px;padding:26px;border:1px solid var(--line);border-radius:23px;background:var(--white);display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s,box-shadow .2s}.project:nth-child(2){background:var(--ash);color:var(--paper)}.project:nth-child(2) p{color:#b6b8b7}.project-index{font-family:var(--head);font-weight:800;color:#b37a1e;font-size:12px;letter-spacing:1px}.project h3{margin-top:19px;font-size:24px}.project p{margin-top:14px;color:var(--muted);font-size:12px}.project-type{margin-top:26px;font-size:10px;font-weight:800;letter-spacing:1px;color:var(--grey)}.project:nth-child(2) .project-type{color:#b6b8b7}.project .status{display:inline-flex;margin-top:10px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#72521c;background:#fff1cc;border-radius:999px;padding:5px 8px}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.skill-panel{padding:27px;border:1px solid var(--line);border-radius:22px;background:var(--white)}.skill-panel h3{font-size:22px;margin-bottom:19px}.skill-list{display:flex;flex-wrap:wrap;gap:9px}.skill{padding:9px 12px;border-radius:11px;background:var(--soft);font-size:11px;font-weight:700}.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.education-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:27px}.education-year{font-size:11px;font-weight:900;letter-spacing:1.3px;color:#a66c12}.education-card h3{font-size:23px;margin:13px 0 10px}.education-card p{font-size:12px;color:var(--muted)}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.cert{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start;padding:19px;background:var(--white);border:1px solid var(--line);border-radius:17px}.cert-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:var(--ash);color:var(--amber);font-family:var(--head);font-weight:800;font-size:12px}.cert h4{font-size:15px;letter-spacing:-.02em}.cert p{font-size:11px;color:var(--muted);margin-top:5px}.cert .year{font-size:10px;font-weight:800;color:#a66c12;margin-top:7px}.credential{display:inline-flex;margin-top:10px;padding:7px 10px;background:var(--ash);color:var(--paper);border-radius:999px;font-size:10px;font-weight:800}
+.contact-wrap{padding-top:35px}.contact{position:relative;overflow:hidden;border-radius:30px;background:var(--amber);padding:48px}.contact:after{content:"↗";position:absolute;right:20px;bottom:-105px;font-family:var(--head);font-size:270px;line-height:1;font-weight:800;opacity:.1}.contact-grid{display:grid;grid-template-columns:1fr .75fr;gap:45px;position:relative;z-index:1}.contact .eyebrow{color:#3d321e}.contact h2{font-size:clamp(38px,5vw,64px);max-width:670px}.contact-copy{margin-top:17px;font-size:14px;max-width:510px}.contact-links{display:grid;gap:10px;align-content:center}.contact-link{padding:15px 17px;border-radius:13px;background:var(--ash);color:var(--paper);font-size:12px;font-weight:800;overflow-wrap:anywhere}.contact-link span{display:block;font-size:11px;font-weight:500;color:#bfc1c0;margin-top:3px}
+footer{padding:26px 0;border-top:1px solid var(--line)}.footer-row{display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:10px}.footer-name{font-family:var(--head);font-weight:800;color:var(--ash);letter-spacing:.5px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+@media(max-width:920px){.nav-links{gap:14px}.nav-links a{font-size:11px}.hero-grid{grid-template-columns:1fr .78fr;gap:30px}.about-grid{gap:42px}.projects-grid{grid-template-columns:repeat(2,1fr)}.projects-grid .project:last-child{grid-column:span 2;min-height:250px}}
+@media(max-width:760px){.container{width:min(var(--max),calc(100% - 32px))}.section{padding:76px 0}.nav{height:68px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:76px;left:16px;right:16px;padding:15px;background:var(--paper);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);align-items:stretch;gap:2px}.nav-links.open{display:flex;flex-direction:column}.nav-links a{padding:11px 9px;font-size:13px}.nav-cta{margin-top:5px}.hero{padding:122px 0 70px}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{gap:35px}.profile-card{min-height:290px}.section-head{display:block}.section-intro{margin-top:15px}.about-grid{gap:32px}.contact{padding:30px 24px}.contact-grid{gap:25px}.skills-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.container{width:calc(100% - 28px)}h1{font-size:clamp(55px,16vw,78px)}.hero h1 .highlight:after{height:8px;bottom:6px}.hero-description{font-size:16px}.profile-card{padding:25px}.focus-grid,.education-grid,.cert-grid,.projects-grid{grid-template-columns:1fr}.projects-grid .project:last-child{grid-column:auto}.project{min-height:270px}.experience{padding-left:34px}.experience-list:before{left:9px}.timeline-dot{left:1px}.experience-card{padding:22px 19px}.experience-top{display:block}.role-name{font-size:21px}.date{display:inline-flex;margin-top:12px}.footer-row{display:block}.footer-row div+div{margin-top:8px}.contact h2{font-size:40px}}
 </style>
 </head>
-
 <body>
 <header>
-  <div class="container navbar">
-    <a class="logo" href="#home" aria-label="Dheen Mohamed home">
-      <span class="logo-mark"></span>
-      <span>Dheen Mohamed<small>PERSONAL PORTFOLIO</small></span>
-    </a>
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Dheen Mohamed home"><span class="brand-mark"></span><span>Dheen Mohamed<small>PERSONAL PORTFOLIO</small></span></a>
+    <button class="menu-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation">☰</button>
+    <nav class="nav-links" id="navigation" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#certifications">Learning</a><a class="nav-cta" href="#contact">Contact ↗</a>
     </nav>
-    <button class="menu" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
   </div>
 </header>
-
 <main id="home">
 <section class="hero">
   <div class="container hero-grid">
-    <div class="reveal">
-      <div class="kicker">MBA · HR · Analysis · Operations</div>
-      <h1>
-        Hi, I'm<br>
-        <span class="accent">Dheen.</span>
-      </h1>
-      <p class="hero-intro">
-        MBA graduate in Human Resource Management with experience across HR operations,
-        finance operations, people coordination and data-driven process work.
-        I enjoy turning knowledge into practical, useful outcomes.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#experience">Explore my experience ↗</a>
-        <a class="btn secondary" href="#contact">Let's connect</a>
-      </div>
-      <div class="scrollcue">Scroll to explore · ↓</div>
+    <div class="hero-copy reveal">
+      <div class="eyebrow">Analyst · Business · Operations</div>
+      <h1><span class="line">Curious by</span><span class="line">nature.</span><span class="line highlight">Analytical by</span><span class="line">approach.</span></h1>
+      <p class="hero-description">I'm Dheen Mohamed, an MBA graduate and analyst interested in how people, data and processes come together to solve practical business problems. My experience spans operations, reporting, finance processes and HR support.</p>
+      <div class="actions"><a class="btn btn-primary" href="#experience">Explore my experience <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="#projects">View selected work</a></div>
+      <div class="hero-foot">Structured thinking · Practical learning · Continuous improvement</div>
     </div>
-
-    <aside class="hero-note reveal">
-      <div class="big">01</div>
-      <h3>People, process &amp; performance.</h3>
-      <p>
-        A personal portfolio built around the way I work:
-        curious, structured, people-focused and always learning.
-      </p>
-      <div class="meta-row">
-        <span class="pill">HR Management</span>
-        <span class="pill">Data &amp; Excel</span>
-        <span class="pill">Process Improvement</span>
-      </div>
+    <aside class="profile-card reveal">
+      <div class="card-label">A little about how I work</div>
+      <div><div class="card-symbol">01</div><h3>People. Process. Performance.</h3><p>I like making complex information easier to understand, spotting process gaps and turning analysis into clear next steps.</p></div>
+      <div class="chips"><span class="chip">Business analysis</span><span class="chip">Reporting</span><span class="chip">HR operations</span><span class="chip">Process improvement</span></div>
     </aside>
   </div>
 </section>
 
-<section id="about" class="section dark-section">
+<section id="about" class="section dark">
   <div class="container about-grid">
     <div class="reveal">
-      <div class="kicker">About me</div>
-      <h2>Learning is how I move forward.</h2>
-      <div class="stat-grid">
-        <div class="stat"><strong>4</strong><span>Professional roles &amp; internships</span></div>
-        <div class="stat"><strong>2025</strong><span>MBA completed in Human Resource Management</span></div>
-        <div class="stat"><strong>30+</strong><span>Mandatory training courses supported at TCS</span></div>
-        <div class="stat"><strong>8</strong><span>Certifications &amp; learning credentials featured</span></div>
-      </div>
+      <div class="eyebrow">About me</div><h2>Good work starts with asking better questions.</h2>
+      <div class="focus-grid"><div class="focus"><strong>Analyse</strong><span>Understand data, trends and exceptions.</span></div><div class="focus"><strong>Organise</strong><span>Bring structure to tasks and information.</span></div><div class="focus"><strong>Collaborate</strong><span>Learn from people and share knowledge.</span></div><div class="focus"><strong>Improve</strong><span>Look for practical ways to work better.</span></div></div>
     </div>
-    <div class="about-copy reveal">
-      <p>
-        Learning fuels my growth, and I actively seek knowledge by observing and reflecting
-        on the environment around me. I believe valuable lessons come not only from classrooms,
-        but also from working closely with experienced professionals.
-      </p>
-      <p>
-        I regularly seek guidance from seniors and mentors, and I enjoy sharing what I learn
-        with my team. I believe collaboration and idea-sharing create a positive workplace
-        where continuous learning can thrive.
-      </p>
-      <p>
-        My goal is to keep improving by blending hands-on experience with academic knowledge.
-        As a Human Resource Management professional, I bring a people-first mindset backed by
-        structured thinking and an interest in data, processes and business performance.
-      </p>
-      <div class="quote">
-        “With a passion for growth and teamwork, I strive to turn knowledge into real-world success.”
-      </div>
+    <div class="about-text reveal">
+      <p>My background combines business education with hands-on exposure to finance operations, HR support and operational analysis. These experiences have helped me understand both the detail behind everyday processes and the importance of clear reporting.</p>
+      <p>I enjoy learning new tools, working through messy information, documenting what matters and communicating findings in a way that people can act on. I value accuracy, collaboration and steady improvement over assumptions or unnecessary complexity.</p>
+      <p>I'm interested in opportunities where analytical thinking, operational understanding and a people-first perspective can contribute to better decisions.</p>
+      <div class="quote">“Make the information clear. Make the next step useful.”</div>
     </div>
   </div>
 </section>
 
 <section id="experience" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <div>
-        <div class="kicker">Experience</div>
-        <h2>Where I've<br>learned by doing.</h2>
-      </div>
-      <p>
-        A mix of consulting/analytical work, finance operations and hands-on HR experience,
-        presented as a progression rather than a simple job list.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <article class="role reveal">
-        <span class="dot"></span>
-        <div class="role-card">
-          <div class="role-top">
-            <div>
-              <div class="role-title">Management Consultant - Analyst</div>
-              <div class="role-company">Consulting &amp; Beyond · Full-time · Chennai, Tamil Nadu</div>
-            </div>
-            <div class="role-date">May 2026 – Present</div>
-          </div>
-          <ul>
-            <li>Supporting analytical and consulting assignments with a focus on structured problem solving, process understanding and management reporting.</li>
-            <li>Working with operational data to identify gaps, exceptions and improvement opportunities.</li>
-            <li>Preparing clear analysis and business-facing outputs from validated information.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Analysis</span><span class="tag">Consulting</span><span class="tag">Reporting</span><span class="tag">Process Improvement</span></div>
-        </div>
-      </article>
-
-      <article class="role reveal">
-        <span class="dot"></span>
-        <div class="role-card">
-          <div class="role-top">
-            <div>
-              <div class="role-title">HR Executive Intern</div>
-              <div class="role-company">AskEVA Communications Private Limited · Internship · Chennai</div>
-            </div>
-            <div class="role-date">Nov 2025 – Dec 2025</div>
-          </div>
-          <ul>
-            <li>Assisted in recruitment activities including screening, shortlisting and interview coordination.</li>
-            <li>Supported onboarding by guiding new joiners through documentation and company processes.</li>
-            <li>Coordinated employee engagement activities and maintained HR records and documentation.</li>
-            <li>Worked closely with the HR team to support smooth day-to-day HR operations.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">Recruitment</span><span class="tag">Onboarding</span><span class="tag">Employee Engagement</span><span class="tag">HR Documentation</span></div>
-        </div>
-      </article>
-
-      <article class="role reveal">
-        <span class="dot"></span>
-        <div class="role-card">
-          <div class="role-top">
-            <div>
-              <div class="role-title">Human Resources Intern</div>
-              <div class="role-company">RDB College of Arts &amp; Science · Internship · Papanasam</div>
-            </div>
-            <div class="role-date">Jan 2025 – Feb 2025</div>
-          </div>
-          <p style="font-size:13px;color:#4f5353;margin-top:18px">
-            Completed an HR internship focused on “A Study on the Effectiveness of Employee Training
-            and Development Programs for Faculty.” Conducted surveys and interviews to assess training
-            impact on faculty performance and student engagement, analyzed program effectiveness,
-            identified improvement areas and proposed actionable HR strategies.
-          </p>
-          <div class="tag-row"><span class="tag">Training &amp; Development</span><span class="tag">Research</span><span class="tag">Employee Engagement</span></div>
-        </div>
-      </article>
-
-      <article class="role reveal">
-        <span class="dot"></span>
-        <div class="role-card">
-          <div class="role-top">
-            <div>
-              <div class="role-title">Finance Analyst (Order to Cash) &amp; HR Support</div>
-              <div class="role-company">Tata Consultancy Services · Chennai</div>
-            </div>
-            <div class="role-date">Sep 2023 – Aug 2024</div>
-          </div>
-          <ul>
-            <li>Verified client billing contracts in Salesforce and created billing schedules in SAP S/4HANA.</li>
-            <li>Managed invoice validation, SAP billing and revenue recognition activities.</li>
-            <li>Performed proforma validation, unbilled checks and account reconciliations.</li>
-            <li>Identified and resolved billing mismatches through reconciliation and data analysis.</li>
-            <li>Prepared daily performance reports and tracked production, breaks and leave records.</li>
-            <li>Led onboarding sessions, policy briefings and monitored completion of 30+ mandatory training courses.</li>
-            <li>Conducted bi-weekly meetings and documented Minutes of Meeting for team coordination.</li>
-          </ul>
-          <div class="tag-row"><span class="tag">SAP S/4HANA</span><span class="tag">Salesforce</span><span class="tag">Billing</span><span class="tag">Reconciliation</span><span class="tag">Onboarding</span></div>
-        </div>
-      </article>
+    <div class="section-head reveal"><div><div class="eyebrow">Experience</div><h2>Experience that connects the dots.</h2></div><p class="section-intro">A cross-functional path through analysis, finance operations and HR. The focus is on the work and skills developed, without overstating outcomes.</p></div>
+    <div class="experience-list">
+      <article class="experience reveal"><span class="timeline-dot"></span><div class="experience-card">
+        <div class="experience-top"><div><div class="role-name">Analyst | Operations &amp; Business Analysis</div><div class="role-meta">Operational analysis, reporting and process improvement</div></div><span class="date">May 2026 – Present</span></div>
+        <ul><li>Review operational data and tracking records to identify gaps, exceptions and opportunities for improvement.</li><li>Support inventory validation, purchase-order tracking and structured operational reporting.</li><li>Build and refine spreadsheet-based reports, dashboards and data checks to make information easier to review.</li><li>Document observations, meeting outcomes and follow-up actions to support consistent execution.</li></ul>
+        <div class="tag-row"><span class="tag">Operational analysis</span><span class="tag">Excel reporting</span><span class="tag">Dashboards</span><span class="tag">Process improvement</span></div>
+      </div></article>
+      <article class="experience reveal"><span class="timeline-dot"></span><div class="experience-card">
+        <div class="experience-top"><div><div class="role-name">Junior HR Executive / HR Intern</div><div class="role-meta">AskEVA Communications Private Limited · Chennai</div></div><span class="date">Nov 2025 – Dec 2025</span></div>
+        <ul><li>Supported recruitment coordination and candidate screening activities.</li><li>Assisted with onboarding documentation, employee records and day-to-day HR coordination.</li><li>Gained practical exposure to employee engagement and HR operations.</li></ul>
+        <div class="tag-row"><span class="tag">Recruitment support</span><span class="tag">Onboarding</span><span class="tag">HR documentation</span></div>
+      </div></article>
+      <article class="experience reveal"><span class="timeline-dot"></span><div class="experience-card">
+        <div class="experience-top"><div><div class="role-name">Finance Analyst (Order to Cash) &amp; HR Support</div><div class="role-meta">Tata Consultancy Services · Chennai</div></div><span class="date">Sep 2023 – Aug 2024</span></div>
+        <ul><li>Validated billing inputs and processed billing activities using SAP S/4HANA and Salesforce.</li><li>Supported invoice generation, billing checks, revenue-recognition activities and reconciliation of billing mismatches.</li><li>Prepared daily performance reports and supported tracking of production, breaks and leave records.</li><li>Led onboarding sessions and policy briefings, and tracked completion of 30+ mandatory training courses.</li><li>Documented meeting outcomes and supported team coordination.</li></ul>
+        <div class="tag-row"><span class="tag">SAP S/4HANA</span><span class="tag">Salesforce</span><span class="tag">Billing &amp; reconciliation</span><span class="tag">Training coordination</span></div>
+      </div></article>
     </div>
   </div>
 </section>
 
-<section id="projects" class="section" style="background:var(--soft)">
+<section id="projects" class="section projects-section">
   <div class="container">
-    <div class="section-head reveal">
-      <div>
-        <div class="kicker">Projects</div>
-        <h2>Academic work<br>with a purpose.</h2>
-      </div>
-      <p>Research projects that connect HR, customer behaviour, training effectiveness and business thinking.</p>
-    </div>
-
-    <div class="projects">
-      <article class="project reveal">
-        <div><div class="project-num">01 · MBA</div><h3>Employee Training &amp; Development Effectiveness</h3><p>Evaluated the impact of training programmes on faculty performance and student engagement, identifying key gaps and practical recommendations.</p></div>
-        <div class="project-bottom">HR · TRAINING · RESEARCH</div>
-      </article>
-      <article class="project reveal">
-        <div><div class="project-num">02 · MBA</div><h3>Employee Engagement Strategies at TCS</h3><p>Analysed HR initiatives and engagement practices, assessing their effectiveness in improving employee morale, compliance and organisational culture.</p></div>
-        <div class="project-bottom">EMPLOYEE ENGAGEMENT · HR · ANALYSIS</div>
-      </article>
-      <article class="project reveal">
-        <div><div class="project-num">03 · BBA</div><h3>Customer Satisfaction &amp; Brand Perception</h3><p>Studied Suzuki two-wheeler customers, examining marketing mix, satisfaction, brand perception and competitive strengths.</p></div>
-        <div class="project-bottom">MARKETING · CUSTOMER INSIGHT · RESEARCH</div>
-      </article>
+    <div class="section-head reveal"><div><div class="eyebrow">Selected projects</div><h2>Ideas shaped into useful work.</h2></div><p class="section-intro">A selection of academic research and practical problem-solving areas across HR, customer insights and operations.</p></div>
+    <div class="projects-grid">
+      <article class="project reveal"><div><div class="project-index">01 / MBA RESEARCH</div><h3>Employee Training &amp; Development</h3><p>Studied the effectiveness of employee training and development programmes for faculty, focusing on programme impact, improvement areas and practical HR recommendations.</p></div><div class="project-type">HR · RESEARCH · LEARNING</div></article>
+      <article class="project reveal"><div><div class="project-index">02 / MBA PROJECT</div><h3>Employee Engagement Strategies</h3><p>Explored employee engagement strategies in a corporate setting, with attention to engagement practices, employee experience and organisational culture.</p></div><div class="project-type">PEOPLE · ENGAGEMENT · ANALYSIS</div></article>
+      <article class="project reveal"><div><div class="project-index">03 / BBA RESEARCH</div><h3>Customer Satisfaction &amp; Brand Perception</h3><p>Researched customer satisfaction and brand perception relating to Suzuki two-wheelers, connecting customer feedback with marketing and business considerations.</p></div><div class="project-type">CUSTOMER INSIGHT · MARKETING</div></article>
+      <article class="project reveal"><div><div class="project-index">04 / PRACTICAL WORK</div><h3>Operations Reporting &amp; Validation</h3><p>Worked on spreadsheet-led tracking and validation concepts to organise operational records, flag missing or delayed entries and make follow-up clearer.</p><span class="status">Practical work area</span></div><div class="project-type">EXCEL · TRACKING · REPORTING</div></article>
+      <article class="project reveal"><div><div class="project-index">05 / IN DEVELOPMENT</div><h3>Customer Demographic Intelligence</h3><p>Developing a structured approach to clean customer location data, validate geography and turn uploaded customer records into understandable demographic insights.</p><span class="status">In development</span></div><div class="project-type">DATA QUALITY · CUSTOMER INSIGHT</div></article>
+      <article class="project reveal"><div><div class="project-index">06 / CONTINUOUS LEARNING</div><h3>Spreadsheet &amp; Dashboard Workflows</h3><p>Practising formulas, lookup logic, summaries and visual reporting to reduce manual effort and improve the clarity of recurring business reports.</p></div><div class="project-type">EXCEL · DATA VISUALISATION</div></article>
     </div>
   </div>
 </section>
 
-<section id="education" class="section">
+<section id="skills" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <div><div class="kicker">Education</div><h2>Built on a<br>business foundation.</h2></div>
-      <p>Academic learning that shaped my interest in people, management, research and business performance.</p>
-    </div>
-    <div class="education-grid">
-      <article class="edu reveal">
-        <div class="edu-year">2023 – 2025</div>
-        <h3>Master of Business Administration (MBA)</h3>
-        <p>Human Resource Management · Rajagiri Dawood Batcha College of Arts &amp; Science · Affiliated to Bharathidasan University · CGPA 7.50/10</p>
-      </article>
-      <article class="edu reveal">
-        <div class="edu-year">2020 – 2023</div>
-        <h3>Bachelor of Business Administration (BBA)</h3>
-        <p>Management Studies · Periyar Maniammai Institute of Science &amp; Technology, Thanjavur · First Class with Distinction · CGPA 7.77/10</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="skills" class="section dark-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div><div class="kicker">Skills</div><h2>People skills.<br>Practical tools.</h2></div>
-      <p>My skill set sits at the intersection of HR, operations, analysis and process-oriented work.</p>
-    </div>
+    <div class="section-head reveal"><div><div class="eyebrow">Skills &amp; tools</div><h2>A practical toolkit, still growing.</h2></div><p class="section-intro">Skills grounded in professional experience, academic work and continued practice.</p></div>
     <div class="skills-grid">
-      <div class="skill-panel reveal">
-        <h3>Technical &amp; analytical</h3>
-        <div class="skill-list">
-          <span class="skill">MS Excel</span><span class="skill">MS Power BI</span><span class="skill">MS PowerPoint</span>
-          <span class="skill">MS Word</span><span class="skill">SAP S/4HANA</span><span class="skill">Salesforce</span>
-          <span class="skill">Billing &amp; Reconciliation</span><span class="skill">Data Analysis</span><span class="skill">Data Visualization</span>
-          <span class="skill">Process Improvement</span>
-        </div>
-      </div>
-      <div class="skill-panel reveal">
-        <h3>People &amp; professional</h3>
-        <div class="skill-list">
-          <span class="skill">Communication</span><span class="skill">Emotional Intelligence</span><span class="skill">Teamwork</span>
-          <span class="skill">Collaboration</span><span class="skill">Adaptability</span><span class="skill">Leadership</span>
-          <span class="skill">Recruitment Support</span><span class="skill">Onboarding</span><span class="skill">Training Coordination</span>
-          <span class="skill">Employee Engagement</span>
-        </div>
-      </div>
+      <div class="skill-panel reveal"><h3>Systems &amp; analysis</h3><div class="skill-list"><span class="skill">MS Excel</span><span class="skill">SAP S/4HANA</span><span class="skill">Salesforce</span><span class="skill">Vyapar</span><span class="skill">MS PowerPoint</span><span class="skill">MS Word</span><span class="skill">Data validation</span><span class="skill">Reconciliation</span><span class="skill">Operational reporting</span><span class="skill">Dashboard concepts</span></div></div>
+      <div class="skill-panel reveal"><h3>People &amp; process</h3><div class="skill-list"><span class="skill">HR operations</span><span class="skill">Onboarding</span><span class="skill">Training coordination</span><span class="skill">Recruitment support</span><span class="skill">Employee engagement</span><span class="skill">Documentation</span><span class="skill">Communication</span><span class="skill">Team collaboration</span><span class="skill">Problem solving</span><span class="skill">Process improvement</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section" style="background:var(--soft)">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Education</div><h2>Business foundations. People perspective.</h2></div><p class="section-intro">Formal study in management, complemented by workplace experience and independent learning.</p></div>
+    <div class="education-grid">
+      <article class="education-card reveal"><div class="education-year">2023 – 2025</div><h3>Master of Business Administration</h3><p>Human Resource Management<br>Rajagiri Dawood Batcha College of Arts &amp; Science<br>Affiliated to Bharathidasan University</p></article>
+      <article class="education-card reveal"><div class="education-year">2020 – 2023</div><h3>Bachelor of Business Administration</h3><p>Periyar Maniammai Institute of Science &amp; Technology, Thanjavur</p></article>
     </div>
   </div>
 </section>
 
 <section id="certifications" class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <div><div class="kicker">Certifications &amp; learning</div><h2>Always adding<br>another layer.</h2></div>
-      <p>A curated view of the certifications and learning milestones currently featured in my portfolio. Credential links are added where a verified public credential URL is available.</p>
-    </div>
+    <div class="section-head reveal"><div><div class="eyebrow">Certifications &amp; learning</div><h2>Keep learning. Keep applying.</h2></div><p class="section-intro">Selected credentials and professional learning. Public credential links are included where available.</p></div>
     <div class="cert-grid">
-      <article class="cert reveal"><div class="cert-icon">DA</div><div><h4>Career Essentials in Data Analysis</h4><p>Microsoft &amp; LinkedIn Learning</p><div class="year">Issued October 26, 2025</div><a class="credential-btn" href="https://www.linkedin.com/learning/certificates/2acce4801288e4dd147db0cfcaea435e17d5193951e24e8a08456fd8924c3273" target="_blank" rel="noopener">View credential ↗</a></div></article>
-      <article class="cert reveal"><div class="cert-icon">IN</div><div><h4>Introduction to Career Skills in Data Analytics</h4><p>LinkedIn Learning</p><div class="year">Issued October 20, 2025</div><a class="credential-btn" href="https://www.linkedin.com/learning/certificates/1656c3ee07a5167d405a29605a8033a3be6a9ff5a73de3195bb3888054785d7d" target="_blank" rel="noopener">View credential ↗</a></div></article>
-      <article class="cert reveal">
-        <div class="cert-icon">HR</div>
-        <div>
-          <h4>Certification Prep: Professional in Human Resources (PHR)</h4>
-          <p>LinkedIn Learning · Course completed October 15, 2025 · 4 hours 14 minutes</p>
-          <div class="year">Issued October 15, 2025</div>
-          <a class="credential-btn" href="https://www.linkedin.com/learning/certificates/573a7cfd6c786942faa0ba91a7b73325fe02d437b0298cb82bca6339b1cff222?trk=share_certificate" target="_blank" rel="noopener">View credential ↗</a>
-        </div>
-      </article>
-      <article class="cert reveal"><div class="cert-icon">TQ</div><div><h4>Essentials of TQM Models &amp; Tools</h4><p>Cambridge International Qualifications · UniAthena</p><div class="year">Issued September 2025</div></div></article>
-      <article class="cert reveal"><div class="cert-icon">EX</div><div><h4>Essentials of Data Visualization using MS Excel</h4><p>Acacia University Professional Development · UniAthena</p><div class="year">Issued September 2025</div></div></article>
-      <article class="cert reveal"><div class="cert-icon">HR</div><div><h4>Basics of Strategic Human Resource Management</h4><p>UniAthena</p><div class="year">Issued September 2025</div></div></article>
-      <article class="cert reveal"><div class="cert-icon">L6</div><div><h4>Lean Six Sigma White Belt Certification</h4><p>Six Sigma Online · Educate 360 · aligned with C.S.S.C.</p><div class="year">Issued Sep 2025</div></div></article>
-      <article class="cert reveal"><div class="cert-icon">AI</div><div><h4>AI Tools Workshop</h4><p>Learning milestone in AI tools, data analysis and productivity</p><div class="year">Issued Oct 2025</div></div></article>
+      <article class="cert reveal"><div class="cert-icon">DA</div><div><h4>Career Essentials in Data Analysis</h4><p>Microsoft &amp; LinkedIn Learning</p><div class="year">October 2025</div><a class="credential" href="https://www.linkedin.com/learning/certificates/2acce4801288e4dd147db0cfcaea435e17d5193951e24e8a08456fd8924c3273" target="_blank" rel="noopener noreferrer">View credential ↗</a></div></article>
+      <article class="cert reveal"><div class="cert-icon">IN</div><div><h4>Introduction to Career Skills in Data Analytics</h4><p>LinkedIn Learning</p><div class="year">October 2025</div><a class="credential" href="https://www.linkedin.com/learning/certificates/1656c3ee07a5167d405a29605a8033a3be6a9ff5a73de3195bb3888054785d7d" target="_blank" rel="noopener noreferrer">View credential ↗</a></div></article>
+      <article class="cert reveal"><div class="cert-icon">HR</div><div><h4>Certification Prep: Professional in Human Resources (PHR)</h4><p>LinkedIn Learning · Course completion</p><div class="year">October 2025</div><a class="credential" href="https://www.linkedin.com/learning/certificates/573a7cfd6c786942faa0ba91a7b73325fe02d437b0298cb82bca6339b1cff222" target="_blank" rel="noopener noreferrer">View credential ↗</a></div></article>
+      <article class="cert reveal"><div class="cert-icon">L6</div><div><h4>Lean Six Sigma White Belt</h4><p>Six Sigma Online · Educate 360</p><div class="year">September 2025</div></div></article>
+      <article class="cert reveal"><div class="cert-icon">TQ</div><div><h4>Essentials of TQM Models &amp; Tools</h4><p>Cambridge International Qualifications · UniAthena</p><div class="year">September 2025</div></div></article>
+      <article class="cert reveal"><div class="cert-icon">EX</div><div><h4>Essentials of Data Visualization using MS Excel</h4><p>Acacia University Professional Development · UniAthena</p><div class="year">September 2025</div></div></article>
+      <article class="cert reveal"><div class="cert-icon">HR</div><div><h4>Basics of Strategic Human Resource Management</h4><p>UniAthena</p><div class="year">September 2025</div></div></article>
+      <article class="cert reveal"><div class="cert-icon">AI</div><div><h4>Applied AI for Human Resources</h4><p>LinkedIn Learning · SHRM learning</p><div class="year">Professional learning</div></div></article>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section" style="padding-top:40px">
-  <div class="container">
-    <div class="contact reveal">
-      <div class="contact-grid">
-        <div>
-          <div class="kicker">Get in touch</div>
-          <h2>Let's turn a good conversation into something useful.</h2>
-          <p>
-            If you're looking for someone who enjoys working with people, processes and data,
-            I'd be happy to connect.
-          </p>
-        </div>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:dheenm550@gmail.com">Email <span>dheenm550@gmail.com</span></a>
-          <a class="contact-link" href="https://www.linkedin.com/in/dheen-mohamed-69541127b/" target="_blank" rel="noopener">LinkedIn <span>View profile ↗</span></a>
-          <a class="contact-link" href="tel:+918124914910">Phone <span>+91 8124914910</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="contact" class="section contact-wrap">
+  <div class="container"><div class="contact reveal"><div class="contact-grid">
+    <div><div class="eyebrow">Let's connect</div><h2>Have a thoughtful problem to solve?</h2><p class="contact-copy">I'm happy to connect about analytical work, operations, reporting, HR and opportunities to keep learning.</p></div>
+    <div class="contact-links"><a class="contact-link" href="mailto:dheenm550@gmail.com">Email<span>dheenm550@gmail.com</span></a><a class="contact-link" href="https://www.linkedin.com/in/dheen-mohamed-69541127b/" target="_blank" rel="noopener noreferrer">LinkedIn<span>View professional profile ↗</span></a></div>
+  </div></div></div>
 </section>
 </main>
-
-<footer>
-  <div class="container footer-inner">
-    <div class="footer-mark">DHEEN MOHAMED · PERSONAL PORTFOLIO</div>
-    <div>Personal portfolio · Independent design adaptation · 2026</div>
-  </div>
-</footer>
-
+<footer><div class="container footer-row"><div class="footer-name">DHEEN MOHAMED · PERSONAL PORTFOLIO</div><div>Built around learning, analysis and practical work · 2026</div></div></footer>
 <script>
-function toggleMenu(){
-  const nav=document.querySelector('.navlinks');
-  const open=nav.dataset.open==='1';
-  if(open){
-    nav.style.display='';
-    nav.dataset.open='0';
-  }else{
-    nav.style.display='flex';
-    nav.style.position='absolute';
-    nav.style.top='76px';
-    nav.style.left='14px';
-    nav.style.right='14px';
-    nav.style.padding='16px';
-    nav.style.background='rgba(250,248,243,.98)';
-    nav.style.border='1px solid #dedbd3';
-    nav.style.borderRadius='16px';
-    nav.style.flexDirection='column';
-    nav.style.alignItems='flex-start';
-    nav.style.boxShadow='0 18px 50px rgba(17,17,17,.10)';
-    nav.dataset.open='1';
-  }
-}
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.querySelectorAll('.navlinks a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    const nav=document.querySelector('.navlinks');
-    if(window.innerWidth<=900 && nav.dataset.open==='1'){
-      nav.style.display='';
-      nav.dataset.open='0';
-    }
-  });
-});
+const menuButton=document.querySelector('.menu-btn');
+const navigation=document.querySelector('#navigation');
+menuButton.addEventListener('click',()=>{const isOpen=navigation.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Close navigation':'Open navigation');menuButton.textContent=isOpen?'×':'☰';});
+navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navigation.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰';}));
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 </script>
 </body>
 </html>
