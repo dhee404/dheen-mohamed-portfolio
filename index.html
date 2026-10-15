@@ -110,6 +110,40 @@ footer{background:rgba(255,255,255,.28)}
 @media(max-width:760px){.hero{padding-top:125px}.hero:before,.hero:after{opacity:.45}.profile-card{min-height:320px}.project{min-height:290px}.section-head{margin-bottom:34px}}
 @media(max-width:560px){.hero{padding-bottom:65px}.hero-foot{line-height:1.8}.profile-card{padding:25px}.education-card{padding:24px}.education-card h3{font-size:24px}.cert{min-height:0}.dark:after{opacity:.45}}
 
+
+/* Focused motion enhancements — preserve V1 layout and content */
+.hero-copy .eyebrow{animation:heroFadeUp .65s ease both}
+.hero h1 .line{overflow:hidden;animation:heroLineIn .85s cubic-bezier(.2,.75,.25,1) both}
+.hero h1 .line:nth-child(1){animation-delay:.08s}
+.hero h1 .line:nth-child(2){animation-delay:.2s}
+.hero h1 .line:nth-child(3){animation-delay:.32s}
+.hero h1 .line:nth-child(4){animation-delay:.44s}
+.hero-description{animation:heroFadeUp .75s .5s both}
+.hero-copy .actions{animation:heroFadeUp .75s .62s both}
+.hero-foot{animation:heroFadeUp .75s .72s both}
+@keyframes heroLineIn{from{opacity:0;transform:translateY(105%);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes heroFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.project{isolation:isolate;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.project:before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;background:radial-gradient(ellipse at 50% 0%,rgba(242,172,60,.2),transparent 68%);transition:opacity .35s ease}
+.project:hover,.project:focus-within{transform:translateY(-7px);box-shadow:0 18px 42px rgba(17,17,17,.13),0 0 0 1px rgba(242,172,60,.3);border-color:rgba(242,172,60,.7)}
+.project:hover:before,.project:focus-within:before{opacity:1}
+.profile-card{isolation:isolate}
+.profile-card>*:not(.globe-scene-v1){position:relative;z-index:2}
+.globe-scene-v1{position:absolute;z-index:0;right:-20px;top:22px;width:190px;height:190px;pointer-events:none;opacity:.78}
+.globe-sphere-v1{position:absolute;inset:17px;border-radius:50%;background:radial-gradient(circle at 31% 25%,rgba(248,214,90,.72),rgba(242,172,60,.18) 25%,rgba(17,17,17,.02) 58%);border:1px solid rgba(248,214,90,.65);box-shadow:inset -14px -7px 25px rgba(242,172,60,.14),0 0 35px rgba(242,172,60,.1);animation:globeTurnV1 12s linear infinite}
+.globe-sphere-v1:before,.globe-sphere-v1:after{content:"";position:absolute;inset:0;border:1px solid rgba(248,214,90,.5);border-radius:50%;transform:scaleX(.42)}
+.globe-sphere-v1:after{transform:rotate(60deg) scaleX(.55)}
+.globe-lat-v1{position:absolute;left:0;right:0;top:33%;height:32%;border:1px solid rgba(248,214,90,.45);border-left-color:transparent;border-right-color:transparent;border-radius:50%}
+.globe-lat-v1.second{top:43%;height:18%;transform:rotate(-20deg)}
+.globe-label-v1{position:absolute;font-size:8px;letter-spacing:1.2px;font-weight:800;color:var(--gold);padding:5px 7px;border:1px solid rgba(248,214,90,.35);border-radius:999px;background:rgba(17,17,17,.68);animation:labelFloatV1 4s ease-in-out infinite}
+.globe-label-v1.data{top:5px;right:2px}
+.globe-label-v1.people{left:-7px;top:88px;animation-delay:-1.2s}
+.globe-label-v1.process{right:1px;bottom:3px;animation-delay:-2.1s}
+@keyframes globeTurnV1{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes labelFloatV1{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@media(max-width:560px){.globe-scene-v1{right:-22px;top:12px;transform:scale(.82);transform-origin:top right;opacity:.55}}
+@media(prefers-reduced-motion:reduce){.hero-copy .eyebrow,.hero h1 .line,.hero-description,.hero-copy .actions,.hero-foot{animation:none;opacity:1;transform:none;filter:none}.globe-sphere-v1,.globe-label-v1{animation:none}.project,.project:before{transition:none}}
+
 </style>
 </head>
 <body>
@@ -133,6 +167,7 @@ footer{background:rgba(255,255,255,.28)}
       <div class="hero-foot">Structured thinking · Practical learning · Continuous improvement</div>
     </div>
     <aside class="profile-card reveal">
+      <div class="globe-scene-v1" aria-hidden="true"><div class="globe-sphere-v1"><span class="globe-lat-v1"></span><span class="globe-lat-v1 second"></span></div><span class="globe-label-v1 data">DATA</span><span class="globe-label-v1 people">PEOPLE</span><span class="globe-label-v1 process">PROCESS</span></div>
       <div class="card-label">A little about how I work</div>
       <div><div class="card-symbol">01</div><h3>People. Process. Performance.</h3><p>I like making complex information easier to understand, spotting process gaps and turning analysis into clear next steps.</p></div>
       <div class="chips"><span class="chip">Business analysis</span><span class="chip">Reporting</span><span class="chip">HR operations</span><span class="chip">Process improvement</span></div>
